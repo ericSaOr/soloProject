@@ -1,12 +1,36 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector('form').addEventListener('submit', e =>{
+
+        e.preventDefault();
+
+        console.log(e.target.userInput.value);
+
+        let result = document.getElementById('inputBox').value;
+        document.getElementById('userInput').innerHTML = 'User Comment:' + result;
+        // console.log(result);
+
+        
+
+
+    })
     console.log('DOM fully loaded and ready to go!')
-    fetchLOTRData(), renderLOTRCard()
+    
+    fetchLOTRData()
+    anything()
+    getComment()
+    renderLOTRCard()
+    
+    buttonClick() 
+    
+    
+     
+    
+    
 })
 
 
 
-console.log('Hi!')
 
 function fetchLOTRData (data){
     console.log("Function Invoked!")
@@ -17,26 +41,23 @@ function fetchLOTRData (data){
         }
     })
     .then(resp => resp.json())
-    .then(data => {
-        renderLOTRCard(data)
-    
-    })
+    .then(renderLOTRCard)
     
      
 }
 
 
-function renderLOTRCard (ringObject){
+function renderLOTRCard (ringObject = {docs:[]}){
 
     
     //console.log(ringObject.docs[0])
 
-    console.log(ringObject.docs)
+    // console.log(ringObject.docs)
  
     
     // 
     for(let i = 0; i < ringObject.docs.length; i++) {
-        console.log("hi")
+    
         let nameElement = document.createElement('h2')
         nameElement.textContent = ringObject.docs[i].name;
         document.getElementById('cardContainer').appendChild(nameElement)
@@ -65,44 +86,115 @@ function renderLOTRCard (ringObject){
 
         wikiURLEl.addEventListener('click', function(){
            wikiURLEl.style.color = "purple";
-           })
+        })
             
            
             
-        }
+    }
 
         let buttonElement = document.createElement('button');
-        buttonElement.textContent = ("Name/Birthplace")
+        buttonElement.textContent = ("Birthplace")
         buttonElement.addEventListener('click', function(e){
+            console.log(e)
             buttonClick(e, ringObject);
 
         })
         document.getElementById('buttonContainer').appendChild(buttonElement);
 
+        let spouseButtonElement = document.createElement('button');
+        spouseButtonElement.textContent = ("Spouse")
+        spouseButtonElement.addEventListener('click', function(e){
+            spouseButtonClick(e, ringObject);
+            
+        })
+        document.getElementById('buttonContainer').appendChild(spouseButtonElement);
+
+        let deathButtonElement = document.createElement('button');
+        deathButtonElement.textContent = ("Death")
+        deathButtonElement.addEventListener('click', function(e){
+            deathButtonClick(e, ringObject);
+        })
+        document.getElementById('buttonContainer').appendChild(deathButtonElement);
 
 
-
+        
+        
 }
-function buttonClick(event, allLOTRdata) {
 
-    for (let i = 0; i < allLOTRdata.docs.length; i++){
+function anything () {
+    console.log("cool")
+}
 
-    let ringNameElement = document.createElement('p')
-    ringNameElement.textContent = allLOTRdata.docs[i].name;
-    document.getElementById('buttonContainer').appendChild(ringNameElement);
+
+
+function getComment() {
+    console.log('hi');
+    document.querySelector('form').addEventListener('submit', e =>{
+
+        e.preventDefault();
+
+        console.log(e);
+
+        // let result = document.getElementById('inputBox').value;
+        // document.getElementById('userInput').innerHTML = 'User Comment:' + result;
+        // console.log(result);
+
+        
+
+
+    })
     
-    let ringBirthElement = document.createElement('p');
+}
+
+
+
+
+
+
+
+
+
+
+function buttonClick(e, allLOTRdata) {
+    
+    for (let i = 0; i < allLOTRdata.docs.length; i++){
+       let ringBirthElement = document.createElement('p');
     ringBirthElement.textContent = allLOTRdata.docs[i].birth
 
-    document.getElementById('buttonContainer').appendChild(ringBirthElement)
+    document.getElementById('buttonContainer').appendChild(ringBirthElement);
 
     
-}
+   }
 
 
 }
 
+function spouseButtonClick(e, spouseLOTRdata){
+
+        for (let i = 0; i < spouseLOTRdata.docs.length; i++){
+            let ringSpouseElement = document.createElement('p');
+            ringSpouseElement.textContent = spouseLOTRdata.docs[i].spouse
+            document.getElementById('buttonContainer').appendChild(ringSpouseElement);
+           
+        }
+            
+            
+        
+            
+}
+
+        function deathButtonClick(e, deathLOTRdata){
+            console.log(e)
+            for (let i = 0; i < deathLOTRdata.docs.length; i++){
+                let deathElement = document.createElement('p');
+                deathElement.textContent = deathLOTRdata.docs[i].death
+                document.getElementById('buttonContainer').appendChild(deathElement);
+            }
+        }
+
+
+
+    
 //allLOTRdata.docs[i].birth;
 //h32ntxCf7_hsaBM8g3G3
 //Authorization: Bearer your-api-key-123
-//<div id = "buttonContainer">
