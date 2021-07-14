@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log('DOM fully loaded and ready to go!')
     
     fetchLOTRData()
-    anything()
     getComment()
     renderLOTRCard()
     
@@ -121,9 +120,7 @@ function renderLOTRCard (ringObject = {docs:[]}){
         
 }
 
-function anything () {
-    console.log("cool")
-}
+
 
 
 
