@@ -25,4 +25,29 @@ body {
     overflow: scroll;
 }
 
+#buttonContainer {
+   
+    text-align: center;
+    border-style: solid;
+    border-radius: 20px;
+    width: 900px;
+    margin: auto;
+}
+
+#commentSection {
+    border-style: ridge;
+    border-color: gray;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    width: 900px;
+    margin: auto;
+
+}
+
+#creatorBar {
+    text-align: center;
+    font-family: fantasy;
+    font-size: small;
+}
 

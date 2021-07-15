@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function fetchLOTRData (data){
     console.log("Function Invoked!")
-    fetch('https://the-one-api.dev/v2/character?limit=20', {
+    fetch('https://the-one-api.dev/v2/character?limit=100', {
         //in documentation it says to enter character(s)?limit=someNumber. WRONG. 
         method: "GET", headers: {
             Authorization: "Bearer h32ntxCf7_hsaBM8g3G3"
@@ -105,9 +105,7 @@ function renderLOTRCard (ringObject = {docs:[]}){
         
 }
 
-function anything () {
-    console.log("cool")
-}
+
 
 
 
@@ -129,15 +127,6 @@ function getComment() {
     })
     
 }
-
-
-
-
-
-
-
-
-
 
 function buttonClick(e, allLOTRdata) {
     
