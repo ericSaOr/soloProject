@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function fetchLOTRData (data){
     console.log("Function Invoked!")
-    fetch('https://the-one-api.dev/v2/character?limit=50', {
+    fetch('https://the-one-api.dev/v2/character?limit=20', {
         //in documentation it says to enter character(s)?limit=someNumber. WRONG. 
         method: "GET", headers: {
             Authorization: "Bearer h32ntxCf7_hsaBM8g3G3"
