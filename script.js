@@ -19,11 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchLOTRData()
     getComment()
     renderLOTRCard()
-    
     buttonClick() 
-    
-    
-     
     
     
 })
@@ -49,9 +45,6 @@ function fetchLOTRData (data){
 function renderLOTRCard (ringObject = {docs:[]}){
 
     
-    //console.log(ringObject.docs[0])
-
-    // console.log(ringObject.docs)
  
     
     // 
@@ -142,13 +135,6 @@ function getComment() {
     })
     
 }
-
-
-
-
-
-
-
 
 
 
