@@ -80,13 +80,7 @@ function renderLOTRCard (ringObject = {docs:[]}){
             
     }
 
-        let buttonElement = document.createElement('button');
-        buttonElement.textContent = ("Birthplace")
-        buttonElement.addEventListener('click', function(e){
-            console.log(e)
-            buttonClick(e, ringObject);
-
-        })
+        
         document.getElementById('buttonContainer').appendChild(buttonElement);
 
         let spouseButtonElement = document.createElement('button');
