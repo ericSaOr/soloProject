@@ -8,12 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let result = document.getElementById('inputBox').value;
         document.getElementById('userInput').innerHTML = 'User Comment:' + result;
-        // console.log(result);
 
-        
-
-
-    })
+        })
     console.log('DOM fully loaded and ready to go!')
     
     fetchLOTRData()
@@ -29,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function fetchLOTRData (data){
     console.log("Function Invoked!")
-    fetch('https://the-one-api.dev/v2/character?limit=10', {
+    fetch('https://the-one-api.dev/v2/character?limit=100', {
         //in documentation it says to enter character(s)?limit=someNumber. WRONG. 
         method: "GET", headers: {
             Authorization: "Bearer h32ntxCf7_hsaBM8g3G3"

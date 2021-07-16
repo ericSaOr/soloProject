@@ -1,0 +1,54 @@
+body {
+    background-color:#cad3e0;
+}
+
+#header {
+    text-align: center;
+}
+
+
+
+#cardContainer {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-style: solid;
+    border-radius: 20px;
+    width: 900px;
+    height: 500px;
+    background-image: url(http://tolkiengateway.net/w/images/d/da/Alan_Lee_-_The_Last_Debate.jpg);
+    background-size: 100%;
+    margin: auto;
+
+}
+
+#cardContainer{
+    overflow: scroll;
+}
+
+#buttonContainer {
+   
+    text-align: center;
+    border-style:initial;
+    border-radius: 20px;
+    width: 900px;
+    margin: auto;
+}
+
+#commentSection {
+    border-style: none;
+    border-color: gray;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    width: 900px;
+    margin: auto;
+    font-family:sans-serif;
+
+}
+
+#creatorBar {
+    text-align: center;
+    font-family: fantasy;
+    font-size: small;
+}
+
