@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log('DOM fully loaded and ready to go!')
     
     fetchLOTRData()
-    anything()
     getComment()
     renderLOTRCard()
     buttonClick() 
@@ -38,29 +37,29 @@ function fetchLOTRData (data){
 }
 
 
-function renderLOTRCard (ringObject = {docs:[]}){
+function renderLOTRCard (ringObject){
 
-    for(let i = 0; i < ringObject.docs.length; i++) {
+    ringObject.docs.forEach(element => {
     
         let nameElement = document.createElement('h2')
-        nameElement.textContent = ringObject.docs[i].name;
+        nameElement.textContent = element.name;
         document.getElementById('cardContainer').appendChild(nameElement)
 
         let raceElement = document.createElement('p')
-        raceElement.textContent = ringObject.docs[i].race;
+        raceElement.textContent = element.race;
         document.getElementById('cardContainer').appendChild(raceElement) 
 
         let sexElement = document.createElement('p')
-        sexElement.textContent = ringObject.docs[i].gender
+        sexElement.textContent = element.gender
         document.getElementById('cardContainer').appendChild(sexElement)
 
         let birthElement = document.createElement('p')
-        birthElement.textContent = ringObject.docs[i].birth
+        birthElement.textContent = element.birth
         document.getElementById('cardContainer').appendChild(birthElement)
 
         let wikiURLEl = document.createElement('a')
-        wikiURLEl.textContent = ringObject.docs[i].wikiUrl;
-        wikiURLEl.href = ringObject.docs[i].wikiUrl;
+        wikiURLEl.textContent = element.wikiUrl;
+        wikiURLEl.href = element.wikiUrl;
         
         
         
@@ -74,7 +73,7 @@ function renderLOTRCard (ringObject = {docs:[]}){
             
            
             
-    }
+    })
 
         let buttonElement = document.createElement('button');
         buttonElement.textContent = ("Birthplace")
@@ -144,12 +143,12 @@ function buttonClick(e, allLOTRdata) {
 
 function spouseButtonClick(e, spouseLOTRdata){
 
-        for (let i = 0; i < spouseLOTRdata.docs.length; i++){
+        spouseLOTRdata.docs.forEach (element => {
             let ringSpouseElement = document.createElement('p');
-            ringSpouseElement.textContent = spouseLOTRdata.docs[i].spouse
+            ringSpouseElement.textContent = element.spouse
             document.getElementById('buttonContainer').appendChild(ringSpouseElement);
            
-        }
+        })
             
             
         
@@ -158,11 +157,11 @@ function spouseButtonClick(e, spouseLOTRdata){
 
         function deathButtonClick(e, deathLOTRdata){
             console.log(e)
-            for (let i = 0; i < deathLOTRdata.docs.length; i++){
+            deathLOTRdata.docs.forEach (element =>{
                 let deathElement = document.createElement('p');
-                deathElement.textContent = deathLOTRdata.docs[i].death
+                deathElement.textContent = element.death
                 document.getElementById('buttonContainer').appendChild(deathElement);
-            }
+            })
         }
 
 
